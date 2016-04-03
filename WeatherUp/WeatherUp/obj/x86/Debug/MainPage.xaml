@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="WeatherUp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherUp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='1' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
+        
+            
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:ConnectionId='2' x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.Margin" Value="24"/>
+                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="*"/>
+                        <Setter Target="FirstGrid.Margin" Value="0 0 6 0"/>
+                        <Setter Target="SecondGrid.Margin" Value="6 0 0 0"/>
+                        <Setter Target="SecondGrid.(Grid.Column)" Value="1"/>
+                        <Setter Target="SecondGrid.(Grid.Row)" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.Margin" Value="12"/>
+                        <Setter Target="FirstGrid.Margin" Value="0 0 0 6"/>
+                        <Setter Target="SecondGrid.Margin" Value="0 6 0 0"/>
+                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="*"/>
+                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="auto"/>
+                        <Setter Target="SecondGrid.(Grid.Column)" Value="0"/>
+                        <Setter Target="SecondGrid.(Grid.Row)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid x:ConnectionId='4' x:Name="FirstGrid" Grid.Column="0" Grid.Row="0" Background="#B0E2FF">
+            
+            <Image x:ConnectionId='7' x:Name="imgWeather" Source="Images/weatherIMG.png"  HorizontalAlignment="Center" 
+               VerticalAlignment="Center" MaxHeight="150" MaxWidth="150"                           />
+        </Grid>
+        <Grid x:ConnectionId='5' x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="#A4D3EE">
+            <Image x:ConnectionId='6' x:Name="imgSavedWeather" Source="Images/savedList.png"  HorizontalAlignment="Center" 
+               VerticalAlignment="Center" MaxHeight="150" MaxWidth="150"                                />
+        </Grid>
+
+    </Grid>
+</Page>
+
