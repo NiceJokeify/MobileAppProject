@@ -27,3 +27,10 @@ Phone - Tablet - Computer Scrren - TV = same functionality.</br>
 *  Network Services
 *  Localisation (English, Polish, Spanish and Lithuanian) 
 *  File Storage, File Retrieval (+Clearing File)
+
+
+####**References**
+1. [MSDN - User Location] (https://msdn.microsoft.com/en-us/library/windows/apps/mt219698.aspx), Usage of GPS.
+2. [MSDN - Create, Write and Read a File] (https://msdn.microsoft.com/en-us/windows/uwp/files/quickstart-reading-and-writing-files), Read and write a file using a StorageFile object.
+3. [c# Corner] (http://www.c-sharpcorner.com/UploadFile/2b876a/get-the-street-address-using-gps-co-ordinates-in-windows-10/), Getting Street Address using co-ordinates.
+4. [OpenWeatherMap API] (http://openweathermap.org/api), For Current Weather - free
